@@ -1,0 +1,235 @@
+// Is this working?
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+
+
+
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	background-image: url("../css/img/main-background.png");
+
+		@media (max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+@border: 3px solid #000;
+@h1: 50px;
+@h2: 30px;
+@h3: 23px;
+@p: 20px;
+
+.text-decoration-mixin(@decoration){
+	text-decoration: @decoration
+}
+
+
+.left-column {
+	width: 300px;
+	height: 800px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px 100px;
+	border: @border;
+	background-color: #1ddcf5;
+	color: #173569;
+	
+	img {
+		margin: 20px 0;
+		height: 155px;
+		border-radius: 5px;
+	}
+
+	.email {
+		text-align: center;
+		margin: 50px;
+		font-size: 20px;
+	}
+	
+	.address {
+		margin: 60px;
+
+		p {
+			margin: 20px 0;
+		}
+	}
+
+	h2 {
+		font-size: @h2;
+		text-align: center;
+	}
+
+	.more {
+		text-align: center;
+		margin: 50px;
+		font-size: @p;
+	}
+
+}
+
+.main-area {
+    width: 55%;
+    float: right;
+	margin: 50px;
+	border: @border;
+	background-color: #173569;
+	color: #1ddcf5;
+
+	.top-section {
+		margin: 50px 0;
+		
+		h1 {
+			font-size: @h1;
+			text-align: center;
+			margin: 10px;
+		}
+		h2 {
+			font-size: @h2;
+			text-align: center;
+			margin: 10px;
+		}
+		p {
+			font-size: @p;
+			text-align: center;
+			margin: 10px;
+		}
+		
+	}
+
+}
+
+.middle-section {
+	display: flex;
+	h1 {
+		font-size: @h1;
+	}
+	h2 {
+		font-size: @h2;
+		margin: 20px 0;
+	}
+	p {
+		font-size: @p;
+	}
+
+	.left-middle {
+		width: 40%;
+		margin: 50px;
+
+	}
+
+	.right-middle {
+		width: 40%;
+		margin: 50px;
+
+		li {
+			margin: 20px;
+			list-style-type: circle;
+
+		}
+	}
+
+	@media (max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+
+	}
+
+}
+
+.bottom-section {
+	h2 {
+		margin: 20px 0;
+		text-align: center;
+		font-size: @h2;
+	}
+
+	h3 {
+		margin: 20px;
+		text-align: center;
+		font-size: @h3;
+	}
+}
+
+.right-column {
+    width: 150px;
+	height: 500px;
+	border: @border;
+	margin: 50px;
+	display: flex;
+	background-color: #1ddcf5;
+	color: #173569;;
+
+	nav{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		margin: 30px auto;
+
+		a {
+			.text-decoration-mixin(none)
+		}
+	}
+}
+
+
